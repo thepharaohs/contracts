@@ -46,22 +46,12 @@ contract ERC721A is
     mapping(address => AddressData) private _addressData;
     mapping(uint256 => address) private _tokenApprovals;
     mapping(address => mapping(address => bool)) private _operatorApprovals;
-    constructor(
+
+        constructor(
         string memory name_,
-        string memory symbol_,
-        uint256 maxBatchSize_,
-        uint256 collectionSize_
-    ) {
-        require(
-            collectionSize_ > 0,
-            "ERC721A: collection must have a nonzero supply"
-        );
-        require(maxBatchSize_ > 0, "ERC721A: max batch size must be nonzero");
-        _name = name_;
-        _symbol = symbol_;
-        maxBatchSize = maxBatchSize_;
-        collectionSize = collectionSize_;
-    }
+        string memory symbol_
+        ) 
+
     function totalSupply() public view override returns (uint256) {
         return currentIndex;
     }
